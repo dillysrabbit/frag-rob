@@ -88,7 +88,7 @@
             responseDiv.textContent = 'Wird geladen...';
 
             try {
-                const response = await fetch('http://127.0.0.1:5000/chat', {
+                const response = await fetch('https://https://frag-rob.onrender.com/chat', {  // <-- Hier die URL aktualisieren
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ message: userMessage })
@@ -101,7 +101,7 @@
                     responseDiv.textContent = 'Fehler: ' + data.error;
                 }
             } catch (error) {
-                responseDiv.textContent = 'Ein Fehler ist aufgetreten.';
+                responseDiv.textContent = 'Ein Fehler ist aufgetreten: ' + error.message;
             }
 
             messageInput.value = ''; // Eingabefeld leeren
